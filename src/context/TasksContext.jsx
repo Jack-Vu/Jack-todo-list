@@ -70,14 +70,14 @@ const TasksContextProvider = ({ children }) => {
       value={{
         tasks,
         filter,
+        sortOrder,
         setFilter,
+        setSortOrder,
         addTask,
         deleteTask,
         toggleTask,
         updateTaskLabel,
         clearCompletedTasks,
-        sortOrder,
-        setSortOrder
       }}>
       {children}
     </TasksContext.Provider>

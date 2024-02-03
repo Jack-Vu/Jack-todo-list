@@ -3,21 +3,11 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #newTaskText {
   width: 300px;
-}
-
-#main-container {
-  width: fit-content;
 }
 
 .pointer {

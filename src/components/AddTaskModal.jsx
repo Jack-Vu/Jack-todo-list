@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import { TasksContext } from "../context/TasksContext";
 import { ADD_TASK_MODAL_ID } from "../constants";
 
-
 const AddTaskModal = () => {
   const [taskLabel, setTaskLabel] = useState("");
   const { addTask } = useContext(TasksContext);
@@ -29,12 +28,6 @@ const AddTaskModal = () => {
   const handleChange = (e) => {
     setTaskLabel(e.target.value);
   };
-
-//   const handleKeyDown = (e) => {
-//     if (e.key === "Enter") {
-//       handleAddTask();
-//     }
-//   };
 
   const handlePriorityChange = (e) => {
     setPriority(e.target.value);
@@ -72,7 +65,6 @@ const AddTaskModal = () => {
                 aria-describedby="task-input"
                 value={taskLabel}
                 onChange={handleChange}
-                // onKeyDown={handleKeyDown}
               />
             </div>
             <div className="mb-3">
@@ -107,4 +99,4 @@ const AddTaskModal = () => {
   );
 };
 
-export { AddTaskModal, ADD_TASK_MODAL_ID };
+export { AddTaskModal };

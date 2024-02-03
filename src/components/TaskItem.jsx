@@ -2,8 +2,6 @@ import { useContext, useState } from "react";
 import { TasksContext } from "../context/TasksContext";
 import { PriorityMapping } from "../constants";
 
-
-
 const TaskItem = ({ task, setTaskToBeDeleted }) => {
   const { toggleTask, updateTaskLabel } = useContext(TasksContext);
 
@@ -59,12 +57,10 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
                 type="checkbox"
                 id={taskId}
                 checked={isCompleted}
-                onChange={handleChange}
-              ></input>
+                onChange={handleChange}></input>
               <label
                 className={`form-check-label ${isCompleted ? "completed" : ""}`}
-                htmlFor={taskId}
-              >
+                htmlFor={taskId}>
                 {label}
               </label>
             </>
@@ -75,37 +71,32 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
             <div
               className="btn-group"
               role="group"
-              aria-label="Basic outlined example"
-            >
+              aria-label="Basic outlined example">
               <button
                 type="button"
                 className="btn btn-sm btn-dark"
                 style={{ "--bs-btn-padding-y": ".1rem" }}
-                onClick={handleSaveEdit}
-              >
+                onClick={handleSaveEdit}>
                 Save
               </button>
               <button
                 type="button"
                 className="btn btn-sm btn-light"
                 style={{ "--bs-btn-padding-y": ".1rem" }}
-                onClick={handleCancelEdit}
-              >
+                onClick={handleCancelEdit}>
                 Cancel
               </button>
             </div>
           ) : (
             <>
               <div className="priority-icon">
-              <i
-                className={`fa-solid ${PriorityMapping[priority].iconClass}`}
-              ></i>
+                <i
+                  className={`fa-solid ${PriorityMapping[priority].iconClass}`}></i>
               </div>
               <div
                 id="edit-button-container"
                 className="pointer"
-                onClick={switchToEditMode}
-              >
+                onClick={switchToEditMode}>
                 <i className="fa-solid fa-pen-to-square"></i>
               </div>
               <div
@@ -115,12 +106,7 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
                 data-bs-target="#taskListDeleteTask"
                 onClick={() => {
                   setTaskToBeDeleted(task);
-                  console.log(
-                    "Clicked on trash can, and passing up data",
-                    task
-                  );
-                }}
-              >
+                }}>
                 <i className="fa-solid fa-trash-can" aria-hidden="true"></i>
               </div>
             </>

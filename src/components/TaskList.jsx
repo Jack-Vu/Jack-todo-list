@@ -55,7 +55,6 @@ const TaskList = () => {
   );
 
   const handleDeleteTask = () => {
-    console.log("Deleting task w/ ID: ", taskToBeDeleted.taskId);
     deleteTask(taskToBeDeleted.taskId);
   };
 
