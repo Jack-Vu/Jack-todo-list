@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TasksContext } from "../context/TasksContext";
 import { ADD_TASK_MODAL_ID } from "../constants";
-import { click } from "@testing-library/user-event/dist/click";
 
 const AddTaskModal = () => {
   const [taskLabel, setTaskLabel] = useState("");
