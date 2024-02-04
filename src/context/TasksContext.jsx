@@ -6,6 +6,7 @@ const TasksContextProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("default");
+  const [priority, setPriority] = useState("low");
   useEffect(() => {
     const tasksFromLocalStorage = JSON.parse(
       window.localStorage.getItem("react-todo-list-tasks")
@@ -33,15 +34,12 @@ const TasksContextProvider = ({ children }) => {
 
   const toggleTask = (taskId) => {
     const updatedTasks = tasks.map((task) => {
-      // checking to see if the current task is the task we're trying update
       if (task.taskId === taskId) {
-        // if it is, update the isCompleted property by flipping it
         return {
           ...task,
           isCompleted: !task.isCompleted,
         };
       }
-      // if the element is not the one we're trying to update, return it as is
       return task;
     });
     updateTasks(updatedTasks);
@@ -64,6 +62,21 @@ const TasksContextProvider = ({ children }) => {
     const uncompletedTasks = tasks.filter((task) => !task.isCompleted);
     updateTasks(uncompletedTasks);
   };
+  const handlePriorityChange = (e) => {
+    setPriority(e.target.value);
+  };
+  const handleEditPriority = (e, taskId) => {
+    const updatedTasks = tasks.map((task) => {
+      if ((task.taskId === taskId)) {
+        return {
+          ...task,
+          priority: e.target.id,
+        };
+      }
+      return task;
+    });
+    updateTasks(updatedTasks)
+  };
 
   return (
     <TasksContext.Provider
@@ -71,13 +84,17 @@ const TasksContextProvider = ({ children }) => {
         tasks,
         filter,
         sortOrder,
+        priority,
         setFilter,
         setSortOrder,
+        setPriority,
         addTask,
         deleteTask,
         toggleTask,
         updateTaskLabel,
         clearCompletedTasks,
+        handlePriorityChange,
+        handleEditPriority,
       }}>
       {children}
     </TasksContext.Provider>

@@ -5,8 +5,8 @@ import { ADD_TASK_MODAL_ID } from "../constants";
 
 const AddTaskModal = () => {
   const [taskLabel, setTaskLabel] = useState("");
-  const { addTask } = useContext(TasksContext);
-  const [priority, setPriority] = useState("low");
+  const { addTask, priority, handlePriorityChange } = useContext(TasksContext);
+  
 
   const handleAddTask = () => {
     if (taskLabel.trim() === "") {
@@ -29,9 +29,7 @@ const AddTaskModal = () => {
     setTaskLabel(e.target.value);
   };
 
-  const handlePriorityChange = (e) => {
-    setPriority(e.target.value);
-  };
+  
 
   return (
     <div
@@ -56,6 +54,7 @@ const AddTaskModal = () => {
           </div>
           <div className="modal-body">
             <div className="mb-3">
+              <h6>Task:</h6>
               <input
                 id="newTaskText"
                 type="text"
@@ -68,6 +67,7 @@ const AddTaskModal = () => {
               />
             </div>
             <div className="mb-3">
+            <h6>Priority:</h6>
               <select
                 className="form-select priority"
                 value={priority}

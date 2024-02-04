@@ -38,3 +38,7 @@ body {
 .sort-select {
   width: fit-content;
 }
+
+.priority-list {
+  --bs-dropdown-min-width: fit-content;
+}

@@ -3,7 +3,8 @@ import { TasksContext } from "../context/TasksContext";
 import { PriorityMapping } from "../constants";
 
 const TaskItem = ({ task, setTaskToBeDeleted }) => {
-  const { toggleTask, updateTaskLabel } = useContext(TasksContext);
+  const { toggleTask, updateTaskLabel, handleEditPriority } =
+    useContext(TasksContext);
 
   const { label, taskId, isCompleted, priority } = task;
   const [editMode, setEditMode] = useState(false);
@@ -36,11 +37,13 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
       handleSaveEdit();
     }
   };
-
+  const handleEditPriorityChange = (e) => {
+    handleEditPriority(e, taskId);
+  };
   return (
     <>
       <li className="list-group-item d-flex justify-content-between align-items-center">
-        <div id="lable-container">
+        <div id="label-container">
           {editMode ? (
             <input
               id="task-label-input"
@@ -89,9 +92,34 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
             </div>
           ) : (
             <>
-              <div className="priority-icon">
-                <i
-                  className={`fa-solid ${PriorityMapping[priority].iconClass}`}></i>
+              <div className="dropdown">
+                <div
+                  className="priority-icon dropdown-toggle pointer"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i
+                    className={`fa-solid ${PriorityMapping[priority].iconClass}`}></i>
+                </div>
+                <ul className="dropdown-menu priority-list">
+                  <i
+                    className="fa-solid fa-angles-up text-danger dropdown-item"
+                    id="high"
+                    key="high"
+                    onClick={handleEditPriorityChange}></i>
+
+                  <i
+                    id="medium"
+                    key="medium"
+                    className="fa-solid fa-angle-up text-warning dropdown-item"
+                    onClick={handleEditPriorityChange}></i>
+
+                  <i
+                    id="low"
+                    key="low"
+                    className="fa-solid fa-angle-down text-success dropdown-item"
+                    onClick={handleEditPriorityChange}></i>
+                </ul>
               </div>
               <div
                 id="edit-button-container"
