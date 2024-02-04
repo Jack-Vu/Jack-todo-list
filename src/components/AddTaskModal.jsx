@@ -73,6 +73,7 @@ const AddTaskModal = () => {
             <div className="mb-3">
               <h6>Priority:</h6>
               <select
+              id="select-priority"
                 className="form-select priority"
                 value={priority}
                 onChange={handlePriorityChange}>

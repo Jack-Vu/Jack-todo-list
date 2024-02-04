@@ -10,6 +10,7 @@ const Sort = () => {
     <div className="d-flex align-items-center column-gap-2">
       <span>Sort by: </span>
       <select
+      id="sort-selection"
         className="form-select sort-select"
         value={sortOrder}
         onChange={handleSortOrderChange}>
