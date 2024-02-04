@@ -2,11 +2,11 @@ import { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TasksContext } from "../context/TasksContext";
 import { ADD_TASK_MODAL_ID } from "../constants";
+import { click } from "@testing-library/user-event/dist/click";
 
 const AddTaskModal = () => {
   const [taskLabel, setTaskLabel] = useState("");
   const { addTask, priority, handlePriorityChange } = useContext(TasksContext);
-  
 
   const handleAddTask = () => {
     if (taskLabel.trim() === "") {
@@ -29,7 +29,11 @@ const AddTaskModal = () => {
     setTaskLabel(e.target.value);
   };
 
-  
+  const handleEnterKey = (e) => {
+    if (e.key === "Enter") {
+      document.getElementById("add-task-button").click();
+    }
+  };
 
   return (
     <div
@@ -64,10 +68,11 @@ const AddTaskModal = () => {
                 aria-describedby="task-input"
                 value={taskLabel}
                 onChange={handleChange}
+                onKeyDown={handleEnterKey}
               />
             </div>
             <div className="mb-3">
-            <h6>Priority:</h6>
+              <h6>Priority:</h6>
               <select
                 className="form-select priority"
                 value={priority}
@@ -86,6 +91,7 @@ const AddTaskModal = () => {
               Cancel
             </button>
             <button
+              id="add-task-button"
               type="button"
               className="btn btn-dark"
               data-bs-dismiss="modal"
