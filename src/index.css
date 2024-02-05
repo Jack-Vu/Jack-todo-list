@@ -42,3 +42,50 @@ body {
 .priority-list {
   --bs-dropdown-min-width: fit-content;
 }
+
+.form-check-label {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 8rem;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+@media (min-width: 370px) {
+  .form-check-label {
+    width: 12rem;
+  }
+}
+@media (min-width: 470px) {
+  .form-check-label {
+    width: 18rem;
+  }
+}
+@media (min-width: 576px) {
+  .form-check-label {
+    width: 22rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-check-label {
+    width: 26rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-check-label {
+    width: 28rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-check-label {
+    width: 24rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .form-check-label {
+    width: 30rem;
+  }
+}
