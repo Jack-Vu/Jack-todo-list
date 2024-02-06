@@ -6,8 +6,11 @@ const ClearTask = () => {
   const { tasks, clearCompletedTasks } = useContext(TasksContext);
   return (
     <>
+    <button className="btn btn-dark" disabled={tasks.length === 0}>
+      Clear All Task
+    </button>
       <button
-        className="btn btn-dark w-75"
+        className="btn btn-dark"
         id="clear-completed-tasks"
         data-bs-toggle="modal"
         data-bs-target="#clearCompletedTasks"

@@ -158,6 +158,7 @@ body {
 @media (max-width: 576px) {
   .container {
     border: none !important;
+    border-radius: 0px;
   }
 }
 
@@ -166,9 +167,13 @@ body {
     width: 26rem;
   }
 }
+
 @media (max-width: 768px) {
   .container {
     padding: 15px !important;
+  }
+  .sort-clear {
+    flex-direction: column !important;
   }
 }
 

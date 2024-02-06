@@ -1,4 +1,3 @@
-
 import { ClearTask } from "./components/ClearTask";
 import { Filters } from "./components/Filters";
 import { Navbar } from "./components/Navbar";
@@ -12,9 +11,11 @@ function App() {
       <main className="container">
         <div className="d-flex justify-content-center">
           <div className="col col-md-10 col-l g-8 col-xl-6">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+            <div className="d-flex justify-content-between mb-3 sort-clear">
               <Sort />
-              <ClearTask />
+              <div className="d-flex justify-content-center align-items-center column-gap-3">
+                <ClearTask />
+              </div>
             </div>
             <TaskList />
             <Filters />
