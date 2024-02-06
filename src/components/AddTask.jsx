@@ -10,7 +10,7 @@ const AddTask = () => {
         id="task-input"
         data-bs-toggle="modal"
         data-bs-target={`#${ADD_TASK_MODAL_ID}`}>
-        Add Task
+        <span>Add Task</span>
       </button>
       <AddTaskModal />
     </>
