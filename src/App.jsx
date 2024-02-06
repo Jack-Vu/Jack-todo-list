@@ -10,8 +10,8 @@ function App() {
     <>
       <Navbar />
       <main className="container">
-        <div className="row justify-content-center">
-          <div className="col col-md-10 col-lg-8 col-xl-6">
+        <div className="d-flex justify-content-center">
+          <div className="col col-md-10 col-l g-8 col-xl-6">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <Sort />
               <ClearTask />

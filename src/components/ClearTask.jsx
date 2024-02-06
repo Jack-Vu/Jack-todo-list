@@ -7,7 +7,7 @@ const ClearTask = () => {
   return (
     <>
       <button
-        className="btn btn-dark w-100"
+        className="btn btn-dark w-50"
         id="clear-completed-tasks"
         data-bs-toggle="modal"
         data-bs-target="#clearCompletedTasks"
