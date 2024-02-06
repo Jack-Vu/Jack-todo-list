@@ -3,8 +3,6 @@ const Modal = ({
   handleDelete,
   message = "Tasks will be deleted permanently.",
 }) => {
-  // being a consumer of the TasksContext, we can access all the
-  // values or functions that are provided by the TasksContext
 
   return (
     <div

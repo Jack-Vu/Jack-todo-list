@@ -56,11 +56,41 @@ body {
   padding-bottom: 10px;
   border: 1px solid #adb5bd !important;
   border-radius: 25px;
-  transition: 0.4s ease-in-out;
- 
+  background-color: #f7f9f9 !important;
 }
-main:hover {
-  transform: scale(1.05);
+.form-check {
+  min-height: 12px !important;
+  min-width: 12px !important;
+  padding: 0px;
+}
+.cyberpunk-checkbox {
+  appearance: none;
+  border: 1px solid #03001C;
+  border-radius: 3px;
+
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.cyberpunk-checkbox:before {
+  content: "";
+  background-color: #03001C;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cyberpunk-checkbox:checked:before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 @media (min-width: 370px) {
@@ -88,13 +118,11 @@ main:hover {
   .form-check-label {
     width: 26rem;
   }
-  
 }
 @media (max-width: 768px) {
   .container {
     padding: 15px !important;
   }
-  
 }
 
 @media (min-width: 992px) {
