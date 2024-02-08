@@ -78,6 +78,10 @@ const TasksContextProvider = ({ children }) => {
     updateTasks(updatedTasks)
   };
 
+  const handleClearAllTask = () => {
+    updateTasks([]);
+  }
+
   return (
     <TasksContext.Provider
       value={{
@@ -95,6 +99,7 @@ const TasksContextProvider = ({ children }) => {
         clearCompletedTasks,
         handlePriorityChange,
         handleEditPriority,
+        handleClearAllTask,
       }}>
       {children}
     </TasksContext.Provider>

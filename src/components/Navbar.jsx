@@ -5,7 +5,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <div className="container-fluid container-sm">
         <a className="navbar-brand" href="/">
-          To Do List
+          Daily To Do List
         </a>
         <AddTask />
       </div>

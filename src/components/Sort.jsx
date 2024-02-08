@@ -7,7 +7,7 @@ const Sort = () => {
     setSortOrder(e.target.value);
   };
   return (
-    <div className="d-flex align-items-center column-gap-2">
+    <div className="d-flex align-items-center column-gap-2 sort-input">
       <span>Sort by: </span>
       <select
       id="sort-selection"

@@ -5,9 +5,8 @@ const AddTask = () => {
   return (
     <>
       <button
-        className="btn btn-dark "
+        className="btn btn-dark transition-btn"
         type="button"
-        id="task-input"
         data-bs-toggle="modal"
         data-bs-target={`#${ADD_TASK_MODAL_ID}`}>
         <span>Add Task</span>

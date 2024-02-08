@@ -13,9 +13,7 @@ function App() {
           <div className="col col-md-10 col-l g-8 col-xl-7">
             <div className="d-flex justify-content-between mb-3 sort-clear">
               <Sort />
-              <div className="d-flex justify-content-center align-items-center column-gap">
-                <ClearTask />
-              </div>
+              <ClearTask />
             </div>
             <TaskList />
             <Filters />

@@ -54,7 +54,7 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
               onKeyDown={handleEditInputKeydown}
             />
           ) : (
-            <div className="d-flex align-items-center justify-content-center">
+            <div className="d-flex align-items-center justify-content-start">
               <input
                 className="form-check cyberpunk-checkbox"
                 type="checkbox"
@@ -62,7 +62,7 @@ const TaskItem = ({ task, setTaskToBeDeleted }) => {
                 checked={isCompleted}
                 onChange={handleChange}></input>
               <label
-                className={`form-check-label ${isCompleted ? "completed" : ""} mb-1`}
+                className={`form-check-label ${isCompleted ? "completed" : ""} cyberpunk-checkbox-label`}
                 htmlFor={taskId}>
                 {label}
               </label>

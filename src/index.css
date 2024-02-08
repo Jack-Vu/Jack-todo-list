@@ -56,12 +56,13 @@ body {
   padding-bottom: 10px;
   border: 1px solid #adb5bd !important;
   border-radius: 25px;
-  background-color: #f7f9f9 !important;
+  background-color: #eff3f3f8 !important;
 }
 .form-check {
   min-height: 12px !important;
   min-width: 12px !important;
   padding: 0px;
+  margin-top: 3px;
 }
 .cyberpunk-checkbox {
   appearance: none;
@@ -92,8 +93,14 @@ body {
 .cyberpunk-checkbox:checked:before {
   transform: translate(-50%, -50%) scale(1);
 }
+.cyberpunk-checkbox-label {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
 
-#task-input {
+.transition-btn {
   position: relative;
   display: flex;
   justify-content: center;
@@ -106,7 +113,7 @@ body {
   border: none;
 }
 
-#task-input:after {
+.transition-btn:after {
   content: " ";
   width: 0%;
   height: 100%;
@@ -116,33 +123,47 @@ body {
   right: 0;
 }
 
-#task-input:hover::after {
+.transition-btn:hover::after {
   right: auto;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-#task-input span {
+.transition-btn span {
   text-align: center;
   text-decoration: none;
   width: 100%;
   padding: 5px;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   z-index: 20;
   transition: all 0.3s ease-in-out;
 }
 
-#task-input:hover span {
+.clear-buttons {
+  width: 350px;
+}
+
+.transition-btn:hover span {
   color: black;
   animation: scaleUp 0.3s ease-in-out;
+}
+
+.btn-outline-dark  {
+  
+  --bs-btn-active-bg: #8d8df0;
 }
 
 @media (min-width: 370px) {
   .form-check-label {
     width: 12rem;
+  }
+}
+@media (max-width: 370px) {
+  #sort-selection {
+    width: 250px !important;
   }
 }
 @media (min-width: 470px) {
@@ -179,8 +200,19 @@ body {
   .sort-clear button {
     margin-top: 1rem;
   }
+  #sort-selection {
+    width: 275px;
+  }
+  .clear-buttons {
+    width: 100%;
+    justify-content: space-evenly !important;
+  }
 }
-
+@media (max-width: 992px) and (min-width: 768px) {
+  .sort-input {
+    width: 50%;
+  }
+}
 @media (min-width: 992px) {
   .form-check-label {
     width: 28rem;
