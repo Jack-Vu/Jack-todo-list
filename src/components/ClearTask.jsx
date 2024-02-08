@@ -3,7 +3,8 @@ import { Modal } from "./Modal";
 import { TasksContext } from "../context/TasksContext";
 
 const ClearTask = () => {
-  const { tasks, clearCompletedTasks, handleClearAllTask } = useContext(TasksContext);
+  const { tasks, clearCompletedTasks, handleClearAllTask } =
+    useContext(TasksContext);
   return (
     <div className="clear-buttons d-flex justify-content-between">
       <button
@@ -11,7 +12,7 @@ const ClearTask = () => {
         type="button"
         disabled={tasks.length === 0}
         onClick={handleClearAllTask}>
-        <span>Clear All Task</span>
+        <span>Clear All Tasks</span>
       </button>
       <button
         className="btn btn-dark transition-btn"
